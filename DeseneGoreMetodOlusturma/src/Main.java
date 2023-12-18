@@ -2,30 +2,25 @@ import java.awt.*;
 import java.util.Scanner;
 
 public class Main {
-    static void drawing(int n) {
-        int temp = n;
-        System.out.print(n + " ");
-
-        for (int i = -5; i < n; i++) {
-            n -= 5;
-            System.out.print(n + " ");
-            if (n == 0) {
-                break;
-            }
-        }
-        for (int i = n; i <= temp; i++) {
-            n += 5;
-            System.out.print(n + " ");
-            if (n == temp) {
-                System.out.println();
-                break;
-            }
-        }
-    }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        int number = sc.nextInt();
-        drawing(number);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Lütfen bir sayı girin: ");
+        int sayi = scanner.nextInt();
+        boolean durum = false;
+        func(sayi,sayi,durum);
+        scanner.close();
+    }
+
+    public static void func(int sayi,int basla,boolean durum) {
+        System.out.print(sayi +" ");
+        if(sayi <= 0){
+            func(sayi + 5, basla ,true);
+        }
+        else if(sayi > 0 && !durum){
+            func(sayi - 5,basla, false);
+        }
+        else if(sayi > 0 && durum && basla!=sayi){
+            func(sayi+5 ,basla , true );
+        }
     }
 }
