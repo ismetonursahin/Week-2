@@ -10,7 +10,7 @@ public class Main {
                   bolenSayi++;
               }
           }
-          if(bolenSayi>2){
+          if(bolenSayi>=2){
              System.out.println(sayi + " : Bu Sayı Asal Değil");
           }else {
               System.out.println(sayi + " : Bu Sayı Asal");
